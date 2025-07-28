@@ -1,5 +1,6 @@
 # Setup
 title: Lanyon
+remote_theme: poole/lanyon
 tagline: "A Jekyll theme"
 description:
 url: https://gwang1224.github.io/bedrock-security-lab/
@@ -16,6 +17,7 @@ author:
 # Gems
 plugins:
   - jekyll-paginate
+  - jekyll-theme-lanyon
 
 # Custom vars
 version: 1.1.0
