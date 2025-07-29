@@ -4,7 +4,8 @@ title: Home
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% assign reversed_posts = paginator.posts | reverse %}
+  {% for post in reversed_posts %}
   <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url | absolute_url }}">
