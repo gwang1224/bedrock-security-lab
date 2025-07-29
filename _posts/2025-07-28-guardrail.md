@@ -16,8 +16,6 @@ Guardrails help mitigate multiple OWASP Top 10 security risks for Large Language
 
 Your goal in this step is to implement guardrails that prevent the chatbot from engaging in risky behaviors.
 
-#### 🔧 Instructions:
-
 1. In the sidebar of Bedrock, navigate to "Guardrail" under "Build" section
 2. Create guardrail
 3. Configure guardrails to block:
