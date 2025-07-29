@@ -7,8 +7,8 @@ Amazon CloudWatch is a monitoring and observability service that allows develope
 
 > CloudTrail vs. CloudWatch – What’s the Difference?
 
-    - CloudTrail focuses on auditing and accountability. It captures every API call and user activity within your AWS account. This allows you to track actions related to your chatbot, such as modifications to your KB or chnanges in IAM role.
-    - CloudWatch, on the other hand, is used for real-time monitoring. You can use it to capture specific events, such as when a prompt injection is suspected, by defining metric filters that scan your logs for those patterns. Once detected, CloudWatch can trigger alarms that notify developers by email (via Amazon SNS) or other channels. Instead of logging everything, we can configure CloudWatch to only log agent invocations, making it more efficient and focused on relevant activity.
+- CloudTrail focuses on auditing and accountability. It captures every API call and user activity within your AWS account. This allows you to track actions related to your chatbot, such as modifications to your KB or chnanges in IAM role.
+- CloudWatch, on the other hand, is used for real-time monitoring. You can use it to capture specific events, such as when a prompt injection is suspected, by defining metric filters that scan your logs for those patterns. Once detected, CloudWatch can trigger alarms that notify developers by email (via Amazon SNS) or other channels. Instead of logging everything, we can configure CloudWatch to only log agent invocations, making it more efficient and focused on relevant activity.
 
 #### 1. Enabling Model Invocationn Logging
 
