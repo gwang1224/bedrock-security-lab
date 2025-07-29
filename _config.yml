@@ -1,7 +1,7 @@
 # Setup
-title: Lanyon
+title: Lab 6
 remote_theme: poole/lanyon
-tagline: "A Jekyll theme"
+tagline: "Building a Secure Chatbot"
 description:
 url: "https://gwang1224.github.io"
 baseurl: "/bedrock-security-lab"
