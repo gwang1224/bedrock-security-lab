@@ -564,6 +564,22 @@ table {
     border-radius:15px;
 }
 
-td, p {
+td, p, ul, li {
+  font-size: .8rem;
+}
+
+ .container {
+    display: flex; /* Enables Flexbox layout */
+    gap: 20px; /* Adds space between columns */
+  }
+
+  .column {
+    flex: 1; /* Makes columns share available space equally */
+  }
+
+figcaption {
+  color: gray;
+  font-style: italic;
+  text-align: left;
   font-size: .75rem;
 }
