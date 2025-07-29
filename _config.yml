@@ -3,8 +3,8 @@ title: Lanyon
 remote_theme: poole/lanyon
 tagline: "A Jekyll theme"
 description:
-url: https://gwang1224.github.io/
-baseurl: "bedrock-security-lab"
+url: "https://gwang1224.github.io"
+baseurl: "/bedrock-security-lab"
 paginate: 5
 permalink: pretty
 
