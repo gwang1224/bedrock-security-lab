@@ -564,7 +564,7 @@ table {
     border-radius:15px;
 }
 
-td, p, ul, li {
+td, p, ul, li, summary {
   font-size: .8rem;
 }
 
