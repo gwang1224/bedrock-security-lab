@@ -18,15 +18,49 @@ Your goal in this step is to implement guardrails that prevent the chatbot from 
 
 #### 🔧 Instructions:
 
-1. **Open your AWS Bedrock console** and navigate to your agent.
-2. **Go to the “Guardrails” tab** of your agent configuration.
-3. Enable or configure guardrails to block:
+1. In the sidebar of Bedrock, navigate to "Guardrail" under "Build" section
+2. Create guardrail
+3. Configure guardrails to block:
    - **Prompt Injection:** Prevent users from overriding the system's intended behavior.
    - **Sensitive Information Disclosure:** Block sharing of personal identifiers like SSNs, addresses, and bank balances.
    - **Excessive Agency:** Stop the model from giving commands, making transactions, or acting autonomously beyond its scope.
    - **Misinformation:** Prevent hallucinated facts or unsupported claims.
-4. Save your configuration and test by prompting the chatbot with edge cases to validate protection.
 
-> 💡 Tip: Combine keyword blocking with Bedrock’s built-in sensitive data detection to increase reliability.
+<details>
+<summary>Extra help?</summary>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>OWASP Risk</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Prompt Injection</strong></td>
+      <td>In <strong>Step 2</strong>, be sure to enable the <strong>"Prompt attacks"</strong> filter under Bedrock Guardrails. This helps block users from injecting system-level prompts.</td>
+    </tr>
+    <tr>
+      <td><strong>Sensitive Information Disclosure</strong></td>
+      <td>In <strong>Step 5</strong>, use <strong>denied topics</strong> to block terms like <em>account number</em> or <em>bank balance</em>.<br>
+      <em>Hint:</em> When adding a guardrail for "bank balance," restrict <strong>only user input</strong> to avoid false positives. Look for the toggle that applies rules to inputs only.</td>
+    </tr>
+    <tr>
+      <td><strong>Excessive Agency</strong></td>
+      <td>Add <strong>denied output phrases</strong> to stop the AI from pretending to take unauthorized actions (e.g., “I’ve updated your account” or “Money has been transferred”). The AI should not simulate authority.</td>
+    </tr>
+    <tr>
+      <td><strong>Misinformation</strong></td>
+      <td>Add a <strong>"Relevance filter"</strong> under guardrail settings.<br>
+      <em>Hint:</em> This ensures the AI’s response is grounded in the knowledge base, helping prevent hallucinations or confident falsehoods.</td>
+    </tr>
+  </tbody>
+</table>
+</details>
 
-In the next step, you’ll learn how to **test and audit** your chatbot’s behavior to ensure these protections are working as expected.
+To test, go back to Agent. Edit the agent and add guardrails in the guardrail section.
+
+<img src="{{ site.baseurl }}/assets/images/guardrail.png">
+
+Test out your chatbot the same way you did in Step 1. Is your chatbot more secure?
