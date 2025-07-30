@@ -3,13 +3,13 @@ layout: post
 title: Introduction
 ---
 
-The use of Generative AI is rapidly increasing across various sectors due to its ability to perform a wide range of tasks, including automation, problem-solving, and content creation. Common chatbot applications, such as ChatGPT and Microsoft Copilot, utilize large language models (LLMs) to respond to user prompts and generate human-like responses. Because of the accessibility and relative accuracy of these chatbots, many businesses incorporate AI to fulfill roles in customer service, sales, marketing, and internal support processes.
+The use of **Generative AI** is rapidly increasing across various sectors due to its ability to perform a wide range of tasks, including automation, problem-solving, and content creation. Common chatbot applications, such as ChatGPT and Microsoft Copilot, utilize **large language models (LLMs)** to respond to user prompts and generate human-like responses. Because of the accessibility and relative accuracy of these chatbots, many businesses incorporate AI to fulfill roles in customer service, sales, marketing, and internal support processes.
 
 <br>
 
 ### OWASP Top 10
 
-OWASP (Open Web Application Security Project) is a non-profit organization dedicated to improving software security. The original OWASP Top 10, published in 2003 and updated constantly, outlines a standard set of security risks affecting web applications. This serves as a guide for developers when they are building new applications or features.
+**[OWASP (Open Web Application Security Project)](https://owasp.org/www-project-top-ten/)** is a non-profit organization dedicated to improving software security. The original OWASP Top 10, published in 2003 and updated constantly, outlines a standard set of security risks affecting web applications. This serves as a guide for developers when they are building new applications or features.
 
 The Open Web Application Security Project (OWASP) is a global nonprofit dedicated to improving software security. One of its most influential projects is the OWASP Top 10, a regularly updated list of the most pressing security risks facing web applications. Since its debut in 2003, the Top 10 has established a benchmark for developers, security professionals, and organizations to create safer software. With each new edition, OWASP highlights emerging threats and evolving best practices.
 
