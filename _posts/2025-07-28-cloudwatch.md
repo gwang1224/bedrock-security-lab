@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STEP 4- Implementing CloudTrail
+title: STEP 5- CloudWatch
 ---
 
 Amazon CloudWatch is a monitoring and observability service that allows developers to collect, track, and analyze operational data in real time. In the context of securing an AWS Bedrock chatbot, CloudWatch can be used to monitor model activity and trigger alerts based on suspicious behaviors—such as an unusually high number of requests, suspected prompt injections, or attempts to bypass guardrails. This helps proactively detect security risks and take action before harm occurs.
