@@ -61,6 +61,8 @@ Your goal in this step is to implement guardrails that prevent the chatbot from 
 </table>
 </details>
 
+<br>
+
 To test, go back to Agent. Edit the agent in agent builder and add guardrails in the guardrail section and "Prepare" to test.
 
 <img src="{{ site.baseurl }}/assets/images/guardrail.png">
