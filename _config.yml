@@ -5,7 +5,7 @@ tagline: "Building a Secure Chatbot"
 description:
 url: "https://gwang1224.github.io"
 baseurl: "/bedrock-security-lab"
-paginate: 5
+paginate: 10
 permalink: pretty
 
 # About/contact
