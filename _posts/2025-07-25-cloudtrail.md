@@ -9,13 +9,21 @@ First, we must enable CloudTrail so that it logs all management actions, which i
 
 #### Enabling CloudTrail
 
+<video controls>
+  <source src="{{ site.baseurl }}/assets/videos/cloudtrail.mov" type="video/mp4">
+</video>
+
 1. Go to CloudTrail Console
-2. In the sidebar, click “Trails” → then click “Create trail”
-3. Name your trail, e.g., bedrock-audit-trail
-4. Choose “Apply trail to all regions”
-5. Enable management events (this includes DeleteGuardrail)
-   • Set “Read/Write events” to “All” or at least “Write-only”
-6. Choose a new or existing S3 bucket to store logs
-7. (Optional) Enable CloudWatch Logs integration to trigger alarms
-   • Enable integration and provide a log group
-8. Click “Create trail”
+2. In the sidebar, click “Trails”, then click “Create trail”
+3. Name your trail, e.g., bedrock-management-events
+4. Select "Create new S3 bucket" as storage location and name the bucket
+5. Create and name a new KMS key, e.g. alias/cloudtrail-logs
+   - This is used to provide a further layer of protection for the encryption of your log files, providing an extra layer of security for your sensitive log data.
+6. Enable CloudWatch Logs
+   - Create a new log group
+   - Name log group, e.g. bedrock-events
+   - Name a new IAM role
+7. Enable management events (this includes DeleteGuardrail)
+   - Set “Read/Write events” to “All” or at least “Write-only”
+8. Keep the rest of the settings as default
+9. Click “Create trail”
