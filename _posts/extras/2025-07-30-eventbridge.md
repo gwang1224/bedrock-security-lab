@@ -3,6 +3,8 @@ layout: page
 title: Eventbridge
 ---
 
+EventBridge is an application that receives events from AWS services and routes them to a target based on defined rules. When creating a chatbot, we want EventBridge to notify us when there are certain security threat events occurring, such as updating or deleting a guardrail. Suppose someone hacks into your system and deletes a guardrail to access personal information, such as client addresses and bank balances. Implementing EventBridge would alert you to these events.
+
 #### Creating an EventBridge rule
 
 1. Navigate to the EventBridge Dashboard
