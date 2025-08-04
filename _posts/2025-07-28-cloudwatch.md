@@ -3,9 +3,9 @@ layout: post
 title: STEP 5- CloudWatch
 ---
 
-Amazon CloudWatch is a monitoring and observability service that allows developers to collect, track, and analyze operational data in real time. In the context of securing an AWS Bedrock chatbot, CloudWatch can be used to monitor model activity and trigger alerts based on suspicious behaviors, such as an unusually high number of requests, suspected prompt injections, or attempts to bypass guardrails. This helps proactively detect security risks and take action before harm occurs.
+**[Amazon CloudWatch](https://aws.amazon.com/cloudwatch/)** is a monitoring and observability service that allows developers to collect, track, and analyze operational data in real time. To secure an AWS Bedrock chatbot, CloudWatch can be used to monitor model activity and trigger alerts based on suspicious behaviors, such as an unusually high number of requests, suspected prompt injections, or attempts to bypass guardrails. This helps proactively detect security risks and take action before harm occurs.
 
-Suppose someone gains access to your system and deletes a guardrail to access personal information, such as client addresses and bank balances. Implementing EventBridge would alert you to these events.
+Suppose someone gains access to your system and deletes a guardrail to access personal information, such as client addresses and bank balances. Implementing CloudWatch would alert you to these events.
 
 > CloudTrail vs. CloudWatch – What’s the Difference?
 
@@ -21,6 +21,7 @@ This tutorial explains how to create a metric filter in CLoudWatch to detect spe
 </video>
 
 1. In CloudWatch console, under "Log group", find the log group associated with your CloudTrail trail
+
 2. Under the tab metric filter, create a metric filter
 
    - Pattern: e.g., { ($.eventName = "InvokeModel") }
@@ -71,6 +72,8 @@ We will now create a CloudWatch Alarm using the SNS on this metric
 5. Click **"Create alarm"** to finish setup.
 
 6. You’re done! When a model is invoked and the metric condition is met, AWS will send an alert email to your SNS subscription. This may take a few minutes depending on CloudTrail log delivery.
+
+\*Note: This can also be done using EventBridge. Read this to learn more... <a href="{ site.baseurl }}/extras/2025-07-30-eventbridge.md">EventBridge for Alerts</a>
 
 #### Task: Create Another Metric Filter
 
