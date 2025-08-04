@@ -73,7 +73,7 @@ We will now create a CloudWatch Alarm using the SNS on this metric
 
 6. You’re done! When a model is invoked and the metric condition is met, AWS will send an alert email to your SNS subscription. This may take a few minutes depending on CloudTrail log delivery.
 
-\*Note: This can also be done using EventBridge. Read this to learn more... <a href="{ site.baseurl }}/extras/2025-07-30-eventbridge.md">EventBridge for Alerts</a>
+\*Note: This can also be done using EventBridge. Read this to learn more... <a href="{ site.baseurl }}/extras/2025-07-30-eventbridge.md/">EventBridge for Alerts</a>
 
 #### Task: Create Another Metric Filter
 
