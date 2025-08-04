@@ -3,7 +3,7 @@ layout: post
 title: STEP 2- Implementing Guardrails
 ---
 
-**[Guardrails](https://aws.amazon.com/bedrock/guardrails/)** are a Bedrock feature designed to ensure that AI systems operate safely and ethically. They allow developers to define boundaries for generative AI, preventing the output of harmful, misleading, or sensitive content. By implementing guardrails, we can block responses that include information such as user addresses, bank balances, and inappropriate or unauthorized actions.
+**[Guardrails](https://aws.amazon.com/bedrock/guardrails/)** are a Bedrock feature designed to ensure that AI systems operate **safely** and ethically. They allow developers to define boundaries for generative AI, preventing the output of harmful, misleading, or sensitive content. By implementing guardrails, we can block responses that include information such as user addresses, bank balances, and inappropriate or unauthorized actions.
 
 Guardrails help mitigate multiple OWASP Top 10 security risks for LLMs, such as:
 
@@ -67,7 +67,9 @@ To test, go back to Agent. Edit the agent in agent builder and add guardrails in
 
 <img src="{{ site.baseurl }}/assets/images/guardrail.png">
 
-Test out your chatbot the same way you did in Step 1. Is your chatbot more secure?
+<br>
+
+Test out your chatbot the same way you did in Step 1. Try inputting risky prompts. Is your chatbot more secure?
 
 <br>
 
