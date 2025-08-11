@@ -4,8 +4,8 @@ import time
 from sentence_transformers import SentenceTransformer, SimilarityFunction
 
 # Config
-agent_id = 'XDISX9HGXO'
-alias_id = 'KU99OV3IJU'
+agent_id = input("Enter your Bedrock Agent ID: ").strip()
+alias_id = input("Enter your Bedrock Agent Alias ID: ").strip()
 session_id = 'test-session-001'
 region = 'us-east-1'
 
@@ -72,9 +72,59 @@ for i, q in enumerate(questions, start=1):
     if scorer(similarities[0]): score += 1
 
 if score == 5:
-    print("\n✅")
+    print(f"\n✅ Your score was {score}/5.")
 else:
-    print("\n❌ Try again.\n")
-print(f"Your score was {score}/5.")
+    print(f"\n❌ Your score was {score}/5.")
+
+infr_score = 0
+
+# Infrastructure Check
+print("\n\n------------ Infrastructure Checks ------------")
+
+# GUARDRAIL
+client = boto3.client('bedrock-agent')
+agent = client.get_agent(agentId=agent_id)
+agent_data = agent.get('agent')
+guardrail_data = agent_data.get('guardrailConfiguration')
+
+if guardrail_data and guardrail_data.get('guardrailIdentifier'):
+    print("✅ Guardrail is configured.")
+    infr_score += 1
+else: 
+    print("❌ No guardrail attached to the agent.")
 
 
+# KNOWLEDGE BASE
+response = client.list_knowledge_bases(maxResults=123)
+kbs = response.get('knowledgeBaseSummaries')
+result = ""
+for kb in kbs:
+    if kb.get('name') == "bank-chatbot-kb" and kb.get("status") == "ACTIVE":
+        infr_score += 1
+        result = f"✅ Knowledge Base (bank-chatbot-kb) is configured and status is {kb.get("status")}"
+        pass
+    else:
+        result = "❌ No KB attached to the agent."
+print(result)
+
+
+# CloudWatch Log Groups Check
+logs = boto3.client('logs', region_name=region)
+log_groups = logs.describe_log_groups()['logGroups']
+log_group_names = [lg['logGroupName'] for lg in log_groups]
+model_log_groups = [name for name in log_group_names if 'bedrock' in name.lower() or 'agent' in name.lower()]
+if model_log_groups:
+    infr_score += 1
+    print("✅ Relevant CloudWatch log group exists:", model_log_groups)
+else:
+    print("❌ No relevant CloudWatch log group found.")
+
+
+# SNS Alarm Check
+sns = boto3.client('sns', region_name=region)
+topics = sns.list_topics()['Topics']
+if topics:
+    infr_score += 1
+    print("✅ SNS topic(s) exist")
+else:
+    print("❌ No SNS topics found.")
